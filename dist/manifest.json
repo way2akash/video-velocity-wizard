@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "My Scalable React Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup/index.html"
+  },
+
+  "background": {
+    "service_worker": "assets/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["assets/content.js"]
+    }
+  ],
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"]
+}
